@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "apptest-62e7"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "apptest-62e7"
+  template:
+    metadata:
+      labels:
+        app: "apptest-62e7"
+    spec:
+      containers:
+        - name: "apptest-62e7"
+          image: "triforkapi.azurecr.io/apptest"
+          ports:
+          - containerPort: 8080
