@@ -1,11 +1,12 @@
 const express = require("express");
 const app = express();
 
-app.get("/user/:id", (req, res) => {
+app.get("/:user/:id", (req, res) => {
   const id = req.params.id;
+  const user = req.params.user;
   res.json({
     id,
-    name: `Danish Adeel #${id}`
+    name: `#${user} #${id}`
   });
 });
 
