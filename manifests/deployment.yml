@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "triforktest-a29b"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "triforktest-a29b"
+  template:
+    metadata:
+      labels:
+        app: "triforktest-a29b"
+    spec:
+      containers:
+        - name: "triforktest-a29b"
+          image: "restapi01.azurecr.io/triforktest"
+          ports:
+          - containerPort: 8080
